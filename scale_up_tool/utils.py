@@ -318,6 +318,7 @@ def initRemoteSSHSession(remote_ssh, key_path, known_hosts_file):
     """
 
     ssh = paramiko.SSHClient()
+    known_hosts_file = os.path.expanduser(known_hosts_file)
 
     if known_hosts_file and os.path.exists(known_hosts_file):
         ssh.load_host_keys(known_hosts_file)
